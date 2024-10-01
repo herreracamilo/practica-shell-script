@@ -10,7 +10,7 @@ declare -a pila
 
 push(){
 	local element=$1
-	pila+=$element
+	pila+=($element)
 	echo "elemento añadido a la pila"
 }
 
@@ -22,7 +22,7 @@ pop(){
 	fi
 	local lastelment=${pila[-1]} #agarro el ultimo elemento
 	unset pila[-1]
-	echo "elemento popeado de la pila"
+	echo "elemento popeado de la pila $lastelement"
 }
 
 length(){
@@ -36,7 +36,7 @@ print(){
                 return
         else
 		echo "los elementos que tiene la pila son:"
-		for element in ${#pila[@]}; do
+		for element in ${pila[@]}; do
 			echo "$element"
 		done
 	fi
