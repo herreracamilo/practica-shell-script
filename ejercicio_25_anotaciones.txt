@@ -1,0 +1,15 @@
+para que uso el while?
+permite que el script procese opciones de forma sencilla. 
+Cada vez que el script encuentra una opción (como -b, -l o -i), getopts asigna el valor de esa opción a la variable opt, 
+y el bucle continúa hasta que se hayan procesado todas las opciones.
+
+como funciona el getopts?
+su sintaxis general es getopts "opciones" variable, donde "opciones" es una cadena que define las opciones que el script aceptará.
+En el caso del script, getopts "b:li" indica que:
+-b espera un argumento adicional (especificado por el :).
+-l y -i no requieren argumentos adicionales.
+
+que es n=$OPTARG?
+uando usas getopts para procesar opciones de línea de comandos, cada vez que encuentras una opción que 
+requiere un argumento (en este caso, la opción -b), el valor que sigue a esa opción se almacena 
+automáticamente en la variable OPTARG.
